@@ -1,3 +1,12 @@
 ;; Real-world organization location / contact.
 ;; :head-role is institutional title only — no personal names.
-{:contact-page "https://www.wikidata.org/wiki/Q628807", :ooyake-id "gov.usa.dol", :sourced-from "com-etzhayyim-ooyake gov-units (verbatim where present)", :head-role-note "institutional office title only; personal names of current office-holders are intentionally NOT stored", :official-url "https://www.dol.gov/", :head-role "Secretary of Labor", :hq {:line-en "Frances Perkins Building", :country "usa", :kind "headquarters", :provenance "https://www.wikidata.org/wiki/Q628807", :last-verified "2026-06-03", :sourcing "authoritative"}, :wikidata "Q628807", :name-en "United States Department of Labor"}
+{:ooyake-id "gov.usa.dol"
+  :official-url "https://www.dol.gov/"
+  :name-en "United States Department of Labor"
+  :wikidata "Q628807"
+  :head-role "Secretary of Labor"
+  :head-role-note "institutional office title only; personal names of current office-holders are intentionally NOT stored"
+  :contact-page "https://www.wikidata.org/wiki/Q628807"
+  :sourced-from "com-etzhayyim-ooyake gov-units (verbatim where present)"
+  :hq {:line-en "Frances Perkins Building" :country "usa" :kind "headquarters" :provenance "https://www.wikidata.org/wiki/Q628807" :last-verified "2026-06-03" :sourcing "authoritative"}
+}
