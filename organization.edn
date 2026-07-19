@@ -6,7 +6,7 @@
   :wikidata "Q628807"
   :head-role "Secretary of Labor"
   :head-role-note "institutional office title only; personal names of current office-holders are intentionally NOT stored"
-  :contact-page "https://www.wikidata.org/wiki/Q628807"
-  :sourced-from "com-etzhayyim-ooyake gov-units (verbatim where present)"
-  :hq {:line-en "Frances Perkins Building" :country "usa" :kind "headquarters" :provenance "https://www.wikidata.org/wiki/Q628807" :last-verified "2026-06-03" :sourcing "authoritative"}
+  :contact-page "https://www.dol.gov/general/contact"
+  :sourced-from "official public contact page"
+  :hq {:line-en "200 Constitution Avenue NW, Washington, DC 20210" :line-local "200 Constitution Avenue NW, Washington, DC 20210" :postal-code "20210" :phone "1-866-487-2365" :kind "headquarters" :provenance "https://www.dol.gov/general/contact" :last-verified "2026-07-19" :sourcing "official-site-public" :country "usa"}
 }
