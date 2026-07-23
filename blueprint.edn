@@ -3,11 +3,51 @@
  :itonami.blueprint/iso3166 "USA-DOL"
  :itonami.blueprint/iso3166-parent "USA"
  :itonami.blueprint/ooyake-id "gov.usa.dol"
- :itonami.blueprint/domain :public-sector/agency-compliance
+ :itonami.blueprint/domain :public-sector/dol-labor-standards-procurement-compliance
  :itonami.blueprint/license "AGPL-3.0-or-later"
- :itonami.blueprint/social-impact [:public-spend-transparency :sme-market-access :cross-border-friction-reduction]
- :itonami.blueprint/governor :market-entry-compliance-governor
+ :itonami.blueprint/social-impact [:procurement-access-clarity :public-spend-transparency :labor-standards-compliance-transparency]
+ :itonami.blueprint/governor :dol-labor-standards-compliance-governor
  :itonami.blueprint/robotics false
  :itonami.blueprint/required-technologies [:identity :forms :dmn :bpmn :audit-ledger]
  :itonami.blueprint/status :public-oss
- :itonami.blueprint/organization {:ooyake-id "gov.usa.dol" :official-url "https://www.dol.gov/" :head-role "Secretary of Labor" :contact-page "https://www.wikidata.org/wiki/Q628807"}}
+ :itonami.blueprint/organization {:ooyake-id "gov.usa.dol" :official-url "https://www.dol.gov/" :head-role "Secretary of Labor" :hq-line-local "200 Constitution Avenue NW, Washington, DC 20210" :hq-phone "1-866-487-2365" :contact-page "https://www.dol.gov/general/contact"}
+ :itonami.blueprint/maturity :implemented
+ :itonami.blueprint/implemented-slice
+ "src/dolcompliance/* (langgraph-clj StateGraph actor): facts.cljc
+ (Service Contract Act (SCA, 41 U.S.C. §§ 6701-6707) + Davis-Bacon Act/
+ Davis-Bacon and Related Acts (DBRA, 40 U.S.C. §§ 3141-3148) + Walsh-
+ Healey Public Contracts Act (PCA) -- the three government-contract
+ labor-standards statutes DOL's Wage and Hour Division (WHD)
+ administers, one per :contract-category (:services/:construction/
+ :supply) -- plus OFCCP's current live nondiscrimination mandate
+ (Section 503 Rehabilitation Act of 1973 (disability) + VEVRAA (Vietnam
+ Era Veterans' Readjustment Assistance Act of 1974)), grounded in
+ en.wikipedia.org sources only, plus a negative/boundary
+ :eo11246-rescission-boundary entry recording that Executive Order
+ 11246 (OFCCP's former primary affirmative-action authority) was
+ RESCINDED 2025-01-21 by EO 14173 -- defending against the stale-
+ authority trap of a proposal claiming an EO-11246-based Affirmative
+ Action Plan is still a current OFCCP requirement), governor.cljc (DOL
+ Labor-Standards Compliance Governor -- spec-basis/no-fabrication HARD
+ check, evidence-incomplete check across applicable tracks, eo11246-
+ stale-authority-misattribution HARD check (flagship defense),
+ labor-standards-category-undetermined HARD check (unconditional),
+ labor-standards-verification-missing HARD check (unconditional),
+ ofccp-compliance-missing HARD check (conditional on :requires-ofccp-
+ compliance?), engagement-fee-mismatch check (three revenue lines),
+ confidence-floor/actuation gate, double-draft/double-submit guards),
+ store.cljc (MemStore + DatomicStore via kotoba-lang/langchain-store's
+ entity field-spec map->tx/pull->map/pull-pattern AND its identity-
+ schema/event-log helpers, engagement entity tracking the engagement-
+ level unconditional/conditional gates plus the single actionable
+ :labor-compliance-package filing track's actuation state),
+ registry.cljc (pure-function filing-draft/filing-submit record
+ construction), dolcompliancellm.cljc (mock Compliance Advisor),
+ operation.cljc (intake -> advise -> govern -> decide ->
+ [request-approval ->] commit/hold StateGraph), phase.cljc (0->3
+ rollout, :filing/draft and :filing/submit permanently excluded from
+ every phase's :auto set). 39 tests / 148 assertions passing (governor
+ contract + store parity + facts + phase + registry), clj-kondo clean
+ (0 errors, 0 warnings) -- see README/docs/business-model.md for the
+ SAM.gov/FAR/VETS-4212/DFARS/CMMC/DCSA/GSAM scope boundaries this pass
+ deliberately did not fabricate."}
