@@ -116,7 +116,7 @@
   filing tracks, this actor manages exactly ONE
   (`dolcompliance.registry/compliance-track`), so no per-track
   indirection is needed here either."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [dolcompliance.facts :as facts]
             [dolcompliance.registry :as registry]
             [dolcompliance.store :as store]))
