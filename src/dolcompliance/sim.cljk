@@ -1,5 +1,5 @@
 (ns dolcompliance.sim
-  "Demo driver -- `clojure -M:dev:run`. Walks a clean :services/SCA
+  "Demo driver -- `kbb -M:dev:run`. Walks a clean :services/SCA
   engagement through intake -> assess service-contract-act ->
   labor-compliance-package filing draft (escalate/approve/commit) ->
   filing submit (escalate/approve/commit), then a :construction/DBRA
