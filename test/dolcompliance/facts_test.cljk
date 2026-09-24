@@ -1,5 +1,5 @@
 (ns dolcompliance.facts-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [dolcompliance.facts :as facts]))
 
 (deftest service-contract-act-has-spec-basis
